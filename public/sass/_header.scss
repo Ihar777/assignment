@@ -1,0 +1,75 @@
+.navbar {
+    &__container {
+        display: flex;
+        margin: 10rem 10%;
+        padding-bottom: 20px;
+        justify-content: space-between;
+        border-bottom: 2px solid $color-secondary;
+        align-items: bottom;
+
+        @include respond(phone) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &--heading {
+            font-size: 4rem;
+            @include respond(small-phone) {
+                margin-bottom: 2rem;
+            }
+        }
+        &--buttons {
+            display: flex;
+            list-style-type: none;
+            align-content: bottom;
+            gap: 4rem;
+            @include respond(phone) {
+                gap: 1rem;
+            }
+        }
+    }
+
+    &__buttons {
+        
+        font-size: 1.4rem;
+
+        & > * {
+            align-self: flex-end;
+            margin-bottom: 1rem;
+
+            &:first-child > * {
+                color: $color-white;
+                background-color: $color-grey-light-2;
+                border-radius: 8px;
+                text-decoration: none;
+                line-height: 1;
+            }
+
+            &:last-child > * {
+                color: $color-white;
+                background-color: $color-red;
+                border-radius: 8px;
+                text-decoration: none;
+                line-height: 1;
+            }
+
+            & > * {
+                display: flex;
+                padding: 1rem 2rem;
+                transition: all 0.2s ease-in-out;
+                border: none;
+    
+                &:hover {
+                    cursor: pointer;
+                    transform: translateY(-1px);
+                    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+                }
+    
+                &:active {
+                    transform: translateY(1px);
+                    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.6);
+                }
+            }
+        }
+    } }
+

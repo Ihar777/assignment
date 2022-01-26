@@ -1,0 +1,75 @@
+$color_white: #ffffff;
+$color-red: #941E28;
+$color-secondary: #101d2c;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == small-phone {
+        @media only screen and (max-width: 33em) { @content }; 
+    }
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 41.3em) { @content }; 
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em) { @content }; 
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em) { @content }; 
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) { @content }; 
+    }
+} 
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;  
+
+    @include respond(tab-land) { 
+        font-size: 56.25%;  
+    }
+
+    @include respond(tab-port) { 
+        font-size: 50%; 
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%;     
+    }
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: $font-primary;
+    color: $color-secondary;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.container {
+    margin: 0 10%;
+    display: grid;
+    @include respond(phone) { 
+        margin: 0 4%;  
+        justify-items: center;
+    }
+    grid-template-rows: min-content;
+}

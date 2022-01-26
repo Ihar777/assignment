@@ -1,0 +1,17 @@
+{
+    "name": "ihar/juniortest",
+    "autoload": {
+        "psr-4": {
+            "app\\": "App/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ihar Petrushenka",
+            "email": "petrushen@yahoo.com"
+        }
+    ],
+    "require-dev": {
+        "suin/phpcs-psr4-sniff": "^3.0"
+    }
+}

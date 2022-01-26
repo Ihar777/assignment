@@ -1,0 +1,19 @@
+.footer {
+    &__container {
+        display: block;
+        width: 80%;
+        margin: 4rem 10%;
+        margin-top: auto;
+        text-align: center;
+        border-top: 2px solid $color-secondary;
+
+        &--heading {
+            font-size: 2rem;
+            padding-top: 4rem;
+            font-weight: 500;
+            @include respond(small-phone) {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}
